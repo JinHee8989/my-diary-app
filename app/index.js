@@ -10,14 +10,13 @@
  import React, {Component} from 'react';
  import { StyleSheet,View, Text } from 'react-native';
  import {NavigationContainer} from '@react-navigation/native'
+ import {RootNavigator} from './roots';
  
  class App extends Component{
    render(){
      return(
        <NavigationContainer>
-         <View>
-           <Text>Hello world</Text>
-         </View>
+         <RootNavigator/>
        </NavigationContainer>
      )
    }
