@@ -13,13 +13,14 @@ export default function(state={},action){ //여기서 쓰는 state는 각 클래
                     email: action.payload.email || false,
                     token: action.payload.token || false,
                 }
-            } 
+            }  
         case SIGN_UP : 
         return {
             ...state,
             auth:{
-                email: action.payload.email || false,
-                token: action.payload.token || false,
+                userId : action.payload.localId || false,
+                token : action.payload.idToken || false,
+                refToken : action.payload.refreshToken || false,
             }
         } 
 

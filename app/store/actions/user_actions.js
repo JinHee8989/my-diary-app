@@ -10,7 +10,7 @@ import {
 export function signIn(data){
     return {
         type: SIGN_IN,
-        payload: {
+        payload: { 
             email: data.email,
             token: data.password
         }
@@ -18,11 +18,29 @@ export function signIn(data){
 }
 
 export function signUp(data){
+
+    const request = axios({
+        method:'POST',
+        url: SIGNUP,
+        data: {
+            email: data.email,
+            password: data.password,
+            returnSecureToken: true,
+        },
+        header: {
+            "Content-Type" : "application/json"
+        }
+
+    }).then(response=>{
+        console.log(response.data);
+        return response.data;
+    }).catch(err=>{
+        alert("에러발생");
+        return false;
+    })
+
     return {
         type: SIGN_UP,
-        payload: {
-            email: data.email,
-            token: data.password
-        }
+        payload: request
     }
 }
