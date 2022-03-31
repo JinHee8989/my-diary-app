@@ -14,7 +14,7 @@
  import {connect} from 'react-redux';
  import {signIn, signUp} from '../../store/actions/user_actions'
  import {bindActionCreators} from 'redux';
- import {setTokens} from '../../utils/miscs'
+ import {setTokens} from '../../utils/misc';
  
  class AuthForm extends Component{
 
