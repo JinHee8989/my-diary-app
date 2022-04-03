@@ -72,8 +72,6 @@
         this.setState({
             form : formCopy
         })
-
-        console.warn(this.state.form)
     }
 
     confirmPassword = () => (

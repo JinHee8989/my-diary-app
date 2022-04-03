@@ -9,11 +9,12 @@
  import React, {Component} from 'react';
  import { StyleSheet,View, Text } from 'react-native';
  
- class DiaryComponent extends Component{
+ class DiaryDocu extends Component{
    render(){
      return(
+       
          <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-           <Text>Diary Screen</Text>
+           <Text>Diary Document</Text>
          </View>
        
      )
@@ -24,5 +25,5 @@
    
  });
  
- export default DiaryComponent;
+ export default DiaryDocu;
  

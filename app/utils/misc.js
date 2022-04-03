@@ -1,6 +1,7 @@
 export const APIKEY = `AIzaSyClgpb2mPX9lAQcrXTETlq3iQGjMNcOkN0`;
 export const SIGNUP = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${APIKEY}`;
 export const SIGNIN = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${APIKEY}`;
+export const REFRESH = `https://securetoken.googleapis.com/v1/token?key=${APIKEY}`;
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
@@ -16,7 +17,7 @@ export const setTokens = async (values,callBack) => {
   
   }
 
-  export const getTokens = async () => {
+  export const getTokens = async(callBack) => {
 
     let values;
     try {
@@ -25,11 +26,12 @@ export const setTokens = async (values,callBack) => {
           , '@my_diary_app@token'
           , '@my_diary_app@refToken'
         
-        ])
+        ]).then(values=>{
+            callBack(values);
+        })
     } catch(e) {
       // read error
     }
-    console.log("Get Tokens", values)
   
     // example console.log output:
     // [ ['@MyApp_user', 'myUserValue'], ['@MyApp_key', 'myKeyValue'] ]
