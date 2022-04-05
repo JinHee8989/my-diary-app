@@ -85,7 +85,6 @@ const NewsStackComponent = () => {
 const AppTabComponent = () => {
     return(
         <MainScreenTab.Navigator 
-            screenOptions={{headerShown:false}}
             tabBarOptions={{
                 showLabel: false,
                 activeBackgroundColor: '#788DCF',
