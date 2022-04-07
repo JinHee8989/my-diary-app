@@ -8,6 +8,7 @@
 
  import React, {Component} from 'react';
  import { StyleSheet,View, Text, ScrollView, Image,TouchableOpacity, Dimensions } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
  import {connect} from 'react-redux';
  import {getDiaries} from '../../store/actions/diary_actions';
  
@@ -26,7 +27,28 @@
         key={index}
         >
         <View style={styles.diaryContainer}>
-          <Text>Hello World</Text>
+          <View style={{height:160}}>
+            {item.data.imagePath?(
+              <View style={styles.indexView}> 
+                <Text style={{fontSize:17, fontWeight:'bold'}}>
+                  # {index+1}
+                </Text>
+                <Image
+                  source={require('../../assets/images/image.png')}
+                  resizeMode='contain'
+                  style={{width:20, height:20}}
+                />
+                </View>
+            )
+            :(
+              <View style={{paddingTop:7, paddingLeft:7}}>
+                <Text style={{fontSize:17, fontWeight:'bold'}}>
+                # {index+1}
+                </Text>
+                </View>
+            )
+            }
+          </View>
         </View>
         </TouchableOpacity>
       ))
@@ -70,6 +92,14 @@
      shadowOpacity:0.8,
      shadowRadius:2,
      borderRadius:2,
+   },
+   indexView:{
+     flexDirection:'row',
+     justifyContent:'space-between',
+     paddingTop:10,
+     paddingLeft:10,
+     paddingRight:12,
+     alignItems:'center'
    }
  });
  
