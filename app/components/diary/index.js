@@ -48,6 +48,38 @@ import { TextInput } from 'react-native-gesture-handler';
                 </View>
             )
             }
+
+            {item.data.date ? (
+                <View style={styles.dateView}>
+                  <Text style={{fontSize:16,fontWeight:'bold'}}>
+                      Date:  
+                  </Text>
+                  <Text style={{fontSize:16}}>
+                      {item.data.date}
+                  </Text>
+                </View>
+            ): null}
+
+            {item.data.title ? (
+                <View style={styles.dateView}>
+                  <Text style={{fontSize:16,fontWeight:'bold'}}>
+                      Date:  
+                  </Text>
+                  <Text style={{fontSize:16}}>
+                      {item.data.title}
+                  </Text>
+                </View>
+            ): null}
+            {item.data.description ? (
+                <View style={{paddingTop:7, paddingLeft:7}}>
+                  <Text style={{fontSize:16,fontWeight:'bold'}}>
+                      Date:  
+                  </Text>
+                  <Text style={{fontSize:16}}>
+                      {item.data.description} 
+                  </Text>
+                </View>
+            ): null}
           </View>
         </View>
         </TouchableOpacity>
@@ -100,6 +132,12 @@ import { TextInput } from 'react-native-gesture-handler';
      paddingLeft:10,
      paddingRight:12,
      alignItems:'center'
+   },
+   dateView:{
+     flexDirection:'row',
+     alignItems:'center',
+     paddingTop:7,
+     paddingLeft:7
    }
  });
  
